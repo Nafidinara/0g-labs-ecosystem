@@ -19,7 +19,7 @@ BORDER_WIDTH = 80
 NETWORK_URL = "https://evmrpc-testnet.0g.ai"
 CHAIN_ID = 16600
 EXPLORER_URL = "https://chainscan-newton.0g.ai/tx/0x"
-ROUTER_ADDRESS = "0xD86b764618c6E3C078845BE3c3fCe50CE9535Da7"
+ROUTER_ADDRESS = "0xE233D75Ce6f04C04610947188DEC7C55790beF3b"
 
 # Token configurations
 TOKENS = {
@@ -630,7 +630,7 @@ async def random_swap(w3: Web3, private_key: str, swap_count: int, percent: floa
         print_separator()
     
     return successful_swaps
-
+    
 # Modified manual_swap function with the new flow
 async def manual_swap(w3: Web3, private_key: str, wallet_index: int, language: str = 'en', pair_choice=None, percent=None):
     account = Account.from_key(private_key)
@@ -694,7 +694,7 @@ async def manual_swap(w3: Web3, private_key: str, wallet_index: int, language: s
     success = await swap_tokens(w3, private_key, token_in_address, token_out_address, amount_in, token_in_symbol, token_out_symbol, language)
     return 1 if success else 0
 
-async def run_swaptoken(language: str = 'en'):
+async def run_swaptokenzerodex(language: str = 'en'):
     # Update the language dictionary with new keys
     update_lang_dictionary()
     
@@ -775,4 +775,4 @@ async def run_swaptoken(language: str = 'en'):
 
 
 if __name__ == "__main__":
-    asyncio.run(run_swaptoken('vi'))  # Ngôn ngữ mặc định là Tiếng Việt, đổi thành 'en' nếu muốn tiếng Anh
+    asyncio.run(run_swaptokenzerodex('vi'))  # Ngôn ngữ mặc định là Tiếng Việt, đổi thành 'en' nếu muốn tiếng Anh

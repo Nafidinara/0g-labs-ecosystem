@@ -48,6 +48,10 @@ async def run_swaptoken(language: str):
     from scripts.swaptoken import run_swaptoken as swaptoken_run
     await swaptoken_run(language)
 
+async def run_swaptokenzerodex(language: str):
+    from scripts.swapzerodex import run_swaptokenzerodex as run_swaptokenzerodex
+    await run_swaptokenzerodex(language)
+
 async def run_storagescan(language: str):
     from scripts.storagescan import run_storagescan as storagescan_run
     await storagescan_run(language)
@@ -88,6 +92,7 @@ async def cmd_exit(language: str):
 # Danh sách lệnh menu
 SCRIPT_MAP = {
     "swaptoken": run_swaptoken,
+    "swapzerodex": run_swaptokenzerodex,
     "storagescan": run_storagescan,
     "conftnft": run_conftnft,
     "domain": run_domain,
@@ -104,18 +109,20 @@ def get_available_scripts(language):
     scripts = {
         'vi': [
             {"name": "1. Swap token ngẫu nhiên trên Hub OG │ 0G LABs Testnet", "value": "swaptoken"},
-            {"name": "2. Deploy Storagescan File │ 0G LABs Testnet", "value": "storagescan"},
-            {"name": "3. Mint ConftApp Miner's Legacy (MINERS) │ 0G LABs Testnet", "value": "conftnft"},
-            {"name": "4. Mint Domain │ 0G LABs Testnet", "value": "domain"},
-            {"name": "5. Mint Aura - Panda 0G (PG) │ 0G LABs Testnet", "value": "mintaura"},
-            {"name": "6. Mint Nerzo - 0G OG (NERZO-0GOG) │ 0G LABs Testnet", "value": "mintnerzo"},
-            {"name": "7. Gửi TX ngẫu nhiên hoặc File (address.txt) │ 0G LABs Testnet", "value": "sendtx"},
-            {"name": "8. Deploy Token smart-contract │ 0G LABs Testnet", "value": "deploytoken"},
-            {"name": "9. Gửi Token ERC20 ngẫu nhiên hoặc File (addressERC20.txt) │ 0G LABs Testnet", "value": "sendtoken"},
-            {"name": "10. Thoát", "value": "exit"},
+            {"name": "2. Swap token ngẫu nhiên trên Zer0Dex", "value": "swapzerodex"},
+            {"name": "3. Deploy Storagescan File │ 0G LABs Testnet", "value": "storagescan"},
+            {"name": "4. Mint ConftApp Miner's Legacy (MINERS) │ 0G LABs Testnet", "value": "conftnft"},
+            {"name": "5. Mint Domain │ 0G LABs Testnet", "value": "domain"},
+            {"name": "6. Mint Aura - Panda 0G (PG) │ 0G LABs Testnet", "value": "mintaura"},
+            {"name": "7. Mint Nerzo - 0G OG (NERZO-0GOG) │ 0G LABs Testnet", "value": "mintnerzo"},
+            {"name": "8. Gửi TX ngẫu nhiên hoặc File (address.txt) │ 0G LABs Testnet", "value": "sendtx"},
+            {"name": "9. Deploy Token smart-contract │ 0G LABs Testnet", "value": "deploytoken"},
+            {"name": "10. Gửi Token ERC20 ngẫu nhiên hoặc File (addressERC20.txt) │ 0G LABs Testnet", "value": "sendtoken"},
+            {"name": "11. Thoát", "value": "exit"},
         ],
         'en': [
             {"name": "1. Swap tokens randomly on Hub OG │ 0G LABs Testnet", "value": "swaptoken"},
+            {"name": "1. Swap tokens randomly on Zer0Dex", "value": "swapzerodex"},
             {"name": "2. Deploy Storagescan File │ 0G LABs Testnet", "value": "storagescan"},
             {"name": "3. Mint ConftApp Miner's Legacy (MINERS) │ 0G LABs Testnet", "value": "conftnft"},
             {"name": "4. Mint Domain │ 0G LABs Testnet", "value": "domain"},

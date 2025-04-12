@@ -14,7 +14,7 @@ from colorama import init, Fore, Style
 init(autoreset=True)
 
 # Constants
-NETWORK_URLS = ['https://og-testnet-evm.itrocket.net']
+NETWORK_URLS = ['https://evmrpc-testnet.0g.ai']
 CHAIN_ID = 16600
 EXPLORER_URL = "https://chainscan-newton.0g.ai"
 SOLC_VERSION = "0.8.19"  # Dùng phiên bản không có PUSH0
@@ -309,7 +309,7 @@ async def deploy_contract(w3: Web3, private_key: str, wallet_index: int, name: s
         total_supply_wei = w3.to_wei(total_supply, 'ether')
 
         # Set fixed gas limit to 21 million
-        gas_limit = 5000000
+        gas_limit = 1500000
         
         # Set fixed gas price to 0.015 gwei
         gas_price = w3.to_wei('70', 'gwei')
